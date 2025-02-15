@@ -1,0 +1,1015 @@
+
+---------------------------------------------linux commands--------------------------------------------
+
+
+
+
+rsync -a /your/directory /backup/ ------ synchronize the contents of a specific diretory with bakp directory
+df -h   ------disk storage check 
+fdisk -l
+
+ls 
+
+mkdir sample     ---creating a directory
+
+rmdir sample   ------remove directory
+
+rm -rf 
+mkdir -p sample1/sample2    -----creating directory inside another directory
+
+gzip file1    ----this commands This will compress the file, and append a .gz extension to it. The original
+file is deleted. 
+gzip -c sample.txt >sample.gz  ----------To prevent this, you can use the -c option and use output
+redirection to write the output to the filename.gz file:
+
+gzip -d   ------- decompress a file, using the -d option:
+
+
+tar -cf archive.tar file1 file2     ------This command creates an archive named archive.tar with the content of file1 and file2 :
+
+tar -xf archive.tar     -----------To extract files from an archive in the current folder, use
+ll -hrt  list the detailed information of directory
+
+ll -hrt |head    ---to list the header files in directory
+
+ll -hrt |head -n 20    ----to list the first 20 files in directory
+
+ ll -hrt | grep "2016" |wc -l   list the files and search a word or number of files
+ps  
+
+who   ---Listing Currently Logged-In Users
+
+du -sh ---disk usage of current directory
+
+findfmnt --show target mount point for all filesystems 
+su    ---switch user
+
+sudo su -
+
+date   date and time
+
+Ps -ef | grep evs   process runing 
+
+systemctl status haproxy   --status check
+
+free  -- space check
+
+free -m  space check (mb)
+
+scp file.txt remote_username@10.10.0.6:/remote/directory   secure copy file
+
+:se nu  to see number list
+:980  to go to number
+/cahr  searching a word
+
+---------------
+You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/. 
+
+id username -----to see user id
+
+
+
+tar command    tar -cvrf mysql-slow-20220420.log.tar mysql-slow-20220420.log
+
+tar -xvf file_name.tar untar the file
+
+press ctrl r  ---search
+
+chown rahul:rahul filename     changing file owner
+
+scp -r UserArchiveManager.php ubuntu@24.201.111.11:/home/centos/
+
+grep -rnw '/path/to/somewhere/' -e 'pattern'     search a particular word in a file
+
+
+
+mv  rename.txt newname.txt       renaming a file
+
+cp -rp file.txt file1.txt-hereee           copying a file
+
+tail -f ape.log    to see live logs in file
+
+
+netstat -tulpn     netstat command
+
+
+ tail -f /var/log/syslog  to see logs
+ 
+ 
+ ps -ef | grep -i httpd | wc -l
+ 
+ 
+ grep "103.111.20.10" /var/log/Sample-website/JerseyDasy_ssl-access_log > PGlogs    ---grep output redirected to a file
+ 
+ 
+ tail -100f /var/log/Sample-site/Serial-access_log          to see logs and 100line
+ 
+ 
+ 
+ 
+ history | grep start   ----to search a word
+ 
+  find / -user harry ------Find the files owned by harry
+  
+  enable/disable
+  
+  
+  grep "Enable-EV-Opensips-Servers.sh" /var/log/cron-20220814   ---------searching a word in file 
+  
+  
+  
+  zip -r mysqldump-2022_08_27DB.zip mysqldump-2022_08_27      zipping a file
+  
+  
+  
+  lastlog  ------------to see who logged in 
+  
+  
+  crontab -e  ----- to edit cron in crontab
+  
+  crontab -l     ------to list the cronjobs
+  
+  systemctl restart crond    -----------to restart crontab
+  
+  
+  ls |wc -l        to see how many files in current folder
+  
+  
+  find     ----command find file
+  
+  
+  --------------------------------------------------------------------------------------------------------------------------
+  
+  
+  yum history                   -------to check installed and uninstalled softwares in centos
+  
+  
+  [root@localhost rahul]# yum history
+ID     | Command line                                             | Date and time    | Action(s)      | Altered
+---------------------------------------------------------------------------------------------------------------
+     8 | install python3-certbot-apache -y                        | 2022-06-20 13:28 | Install        |   25
+     7 | install epel-release mod_ssl -y                          | 2022-06-20 13:23 | Install        |    3
+     6 | install vim                                              | 2022-06-20 13:10 | Install        |    4
+     5 | install php php-curl php-zip php-opcache php-mysqlnd     | 2022-06-20 13:09 | Install        |   15
+     4 | install mariadb-server mariadb                           | 2022-06-20 12:59 | Install        |   61 EE
+     3 | update                                                   | 2022-06-20 11:28 | I, U           |   40
+     2 | install httpd                                            | 2022-06-14 23:02 | Install        |    9
+     1 |                                                          | 2022-06-14 22:48 | Install        |  460 EE
+
+yum history info 8        -------------------to known information particular of software installed
+
+
+[root@localhost rahul]# yum history info 8
+Transaction ID : 8
+Begin time     : Mon 20 Jun 2022 01:28:35 PM IST
+Begin rpmdb    : 559:2d1897e1c411d4e77ec02842dd57ef83906facbf
+End time       : Mon 20 Jun 2022 01:28:43 PM IST (8 seconds)
+End rpmdb      : 584:c9200a41bdb857ecf53eb89bea3129e612a87efc
+User           : root <root>
+Return-Code    : Success
+Releasever     : 8
+Command Line   : install python3-certbot-apache -y
+Comment        :
+Packages Altered:
+    Install python3-augeas-0.5.0-12.el8.noarch                        @appstream
+    Install python3-distro-1.4.0-2.module+el8.3.0+120+426d8baf.noarch @appstream
+    Install python3-pip-9.0.3-22.el8.rocky.0.noarch                   @appstream
+    Install python3-pyOpenSSL-19.0.0-1.el8.noarch                     @appstream
+    Install python3-pytz-2017.2-9.el8.noarch                          @appstream
+    Install python36-3.6.8-38.module+el8.5.0+671+195e4563.x86_64      @appstream
+    Install augeas-libs-1.12.0-7.el8.x86_64                           @baseos
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+hostnamectl    ------to check system os information
+
+
+[root@localhost rahul]# hostnamectl
+   Static hostname: localhost.localdomain
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: c40b5c3402634525afa3ef17f7d61054
+           Boot ID: 3c7bb82fae4d41e89a582fe2bb9db517
+    Virtualization: oracle
+  Operating System: Rocky Linux 8.6 (Green Obsidian)
+       CPE OS Name: cpe:/o:rocky:rocky:8:GA
+            Kernel: Linux 4.18.0-372.9.1.el8.x86_64
+      Architecture: x86-64
+------------------------------------------------------------------------------------------------------------------------------
+
+
+sudo apache2ctl configtest     to check whether error in apache file
+
+ssh -i .\ec2sample.pem ec2-user@12.56.32.69      ------taking ssh connection from terminal (take ssh from key file folder)
+
+
+sudo apt-get purge mariadb-server    ---- uninstall a package
+
+sudo apt-get autoremove   ----to remove dependence of a package
+
+mv *txt /home/ron/folder/      
+
+
+gzip -r filename.txt    --Gzip only compresses files not folders
+
+
+
+ ll -hrt | grep zip     to list and see mentioned word
+ 
+  ll -hrt | grep zip |wc -l  to list and see mentioned word and number of words
+  
+  
+  
+  tar xvf file.tar    ---untar the file
+  
+  tar cvf file.tar *.c   -----creating tar file
+  
+  more /etc/services     ------You can find a list of all services and ports in the
+
+  
+  ss -ltn     -----to check port open
+  
+  
+  uptime   --- to check the uptime of server
+  
+  
+   w azureuser     -------We use the w command displays information about the users currently on the machine, and their processes.
+   
+   uptime –---------- Tell how long the Linux system has been running
+   
+   
+   ps  -------- command to report a snapshot of the current processes under Linux. To select all processes pass the -A 
+   
+   
+   dpkg -s apache2     ----to check whether the package is installed
+   
+   nmap -A  192.168.0.3  -----Turn on OS and version detection scanning script (IPv4) 
+ 
+ 
+nmap -sA 192.168.1.254
+nmap -sA server1.cyberciti.biz  ----Find out if a host/network is protected by a firewall using namp command
+
+
+nmap -PN 192.168.1.1
+nmap -PN server1.cyberciti.biz   ------Scaning a host when protected by the firewall
+
+
+
+nmap -sP 192.168.1.0/24  ------Scan a network and find out which servers and devices are up and running
+
+
+nmap --reason 192.168.1.1
+nmap --reason server1.cyberciti.biz       ----------------Display the reason a port is in a particular state
+
+
+
+     nmap --open 192.168.1.1----------------------Only show open (or possibly open) ports using nmap command in Linux
+	 
+	 
+nmap -O 192.168.1.1
+nmap -O  --osscan-guess 192.168.1.1
+nmap -v -O --osscan-guess 192.168.1.1    ------------detect remote operating system with the help of nmap
+
+
+
+-----------------------------
+setting time in linux
+
+timedatectl    shows the current time
+
+timedatectl list-timezones  ------lists the timezones
+
+timedatectl set-timezone Asia/Kolkata    ------setting the timezone
+
+
+----------------------------------------------------------------------
+
+to find the temporary binary access
+
+find /usr/bin/ -user root -perm -4000
+
+
+----------------------------------------------
+
+last  -successfull login
+
+lastb  - unsucessfull login
+
+ln sample sample2   ---backup a file in different name
+
+ln -s jose jose2    
+
+
+ echo $SHELL     ------to find which shell we are using
+
+
+ls ; ll -hrt ;     ----running multiple commands 
+
+mysqldump -u root -p --all-databases > /home/server/Desktop/backupfile.sql     ------mysql backup for all databases
+
+
+
+mysqldump -u [username] –p[password] [database_name] > [dump_file.sql]            The parameters of the said command are as follows.
+
+[username] : A valid MySQL username.
+[password] : A valid MySQL password for the user.
+[database_name] : A valid Database name you want to take backup.
+[dump_file.sql]: The name of the backup dump file you want to generate.
+
+mysql -u [username] –p[password] [database_name] < [dump_file.sql]
+
+mysqldump -h red-prod-db.ji3415hellc9.us-east-1.rds.amazonaws.com -u user1  -p######PASSS user | gzip > /home/centos/user-Manual-Backup-20230529.sql.gz  -------for taking a Table backup
+
+
+
+---------------------------------------------------------------------------------
+
+apt list --installed            --------to check installed software and packages in Ubuntu
+
+apt list --installed |grep "python"     ----to check particular software installed 
+
+ apt list --upgradeable                      ----------get a list of all upgradeable packages
+ 
+ apt list            ---------------Let us list all software packages on Ubuntu Linux available for us:
+ 
+ apt list |grep "nginx"
+ 
+apt list -a sudo                          ----------------to list or find out if a specific package installed or not
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+used to print the machine's architecture.
+
+
+rahul@Rah:~$ arch
+x86_64
+
+-----------------------------------------------------------------------------------------
+
+factor command prints the prime factors of the input number.
+
+rahul@Rah:~$ factor 234555
+234555: 3 5 19 823
+
+-------------------------------------------------------------
+
+The free command displays the amount of free and used memory in the system.
+
+rahul@Rah:~$ free
+               total        used        free      shared  buff/cache   available
+Mem:         8001504      328660     7373160        2508      299684     7440212
+Swap:        2097152           0     2097152
+
+
+--------------------------------------
+to change the owner of file
+
+chown 
+
+
+
+---------------------------------------------------------------------------
+
+hostname     to display the system name
+
+hostname -d      --------------to print the associated domain name 
+
+
+hostname -i       ---------------------to print the IP address
+
+hostname  nameofthehost    ---------to change hostname
+
+
+
+
+
+----------------------------------------------------------------------
+
+
+
+export HISTTIMEFORMAT="%F %T: "                     -------------------------to make history display date and time as well
+
+export HISTSIZE=0      -------------------------------to make history stop recording commands    
+
+export HISTCONTROL=ignorespace       ----------------------to make history not record a single command
+
+
+
+!!            ----------------to run the previous command
+
+history -c      ---------------If you want to clear existing history so that you can start afresh, use the -c command line option.
+
+
+
+------------
+encrypt a zip file 
+
+zip -re sample.zip filename.txt
+
+
+
+ logname -----------The logname command prints the user-name of the current user.
+
+
+
+lshw            ---------The lshw command extracts and displays detailed information on the hardware configuration of the machine.
+
+lscpu                   --------------The lscpu command displays in the output system's CPU architecture information (such as the number of CPUs, threads, cores, sockets, and more).
+
+
+
+-------------to list the open files in server
+
+
+
+netstat -s to make netstat print network statistics
+
+
+sdiff  ---------sdiff command lets you perform a side-by-side merge of differences between two files. 
+
+
+
+
+zcat             ---------------The zcat command is used to display the content of gzip-compressed files. Example of how to display the content of the gzip compressed text file test.txt.gz:
+
+
+uname -r   -------to print kernel release
+
+
+uname -v --------to print kernel version
+
+
+
+
+----------------------
+to install package in centos or redhat linux
+
+rpm -i packname.rpm        to install a package
+
+rpm -e package.rpm           to uninstall a package
+
+rpm -q  packagename.rpm       to query a package
+
+
+----------------------------------
+
+untar file
+
+tar -xvf  for .tar format
+
+
+tar -xvzf   for tgz format
+
+
+
+-------------------
+
+dhcp error check command in Ubuntu
+
+
+dhcpd -t -cf /etc/dhcp/dhcpd.conf
+
+---------------------------------
+
+find and replace command for vim in linux
+
+
+%s/@salesdialers.com/@prospectboss.com/gc
+
+-------------------------
+
+grep -nr "SUPPORT_MAIL" /var/www/eastwesttrait/php/init/eastwest_justdi.ini -----
+
+
+deluser david    ------deleting a user called david
+
+----------------------------------
+vim notepad command in linux
+
+:578,698s/^/#    commands # from 578 line to 698 line
+
+
+
+---------------------------
+
+snort error check command
+in configuration file
+
+snort -T -i enp0s3 -c /etc/snort/snort.conf
+
+
+
+
+
+------------------------------------------
+
+haproxy error check command
+
+haproxy -c -V -f /etc/haproxy/haproxy.cfg
+--------------------------------------------------
+
+
+watch df -h     -------continously watches df -h for 2 seconds
+
+
+
+
+-------------------------------------------
+ /usr/sbin/httpd -t    httpd error check command in centos
+ 
+nginx -t           error check command 
+ 
+ -----------------
+ hash  ---to check number of time a command has been executed
+ 
+ 
+ disown -r   remove all the running process without restarting the machine
+ 
+ 
+ compgen -c   to check the full list of available commands
+
+
+
+------------------------------------------------------
+
+to restrict specific ip to ftp server
+
+enable "tcp_wrapper=yes" in the configuration file at /etc/vsftpd.conf
+
+then add suspious ip in host.deny file at location /etc/host.deny
+
+
+ --------------------------------------
+ 
+ to check linux os name and version in centos
+ 
+  cat /proc/version
+  
+  
+  apachectl -t
+  
+  
+  -----------------------------
+  
+  
+  to generate a pem file for ssl certificate update
+  
+  cat STARWAR.webdss.com-2023.crt STARWAR.webdss.com-2023.key STARWAR.webdss.com-2023.ca-bundle >> STARWAR.webdss.com-2023.pem
+  ----------------------------------------------------------
+  
+  
+  to run mutiple query in mysql
+
+
+source /home/centos/filename
+
+
+----------------------
+
+Vim shortcuts
+
+gg    goes to the top the line in file
+
+:se nu     number line in vim
+
+Shift + G  end of the line
+
+
+dd     to delete a line
+
+
+---------------------------------------------
+
+installing a software or package in centos 7
+
+yum install packagename
+
+------------------------------------------------
+
+installing a software or package in Ubuntu 20
+
+sudo apt install fail2ban  
+
+-----------------------------------------------
+to set hostname in ubuntu
+
+hostnamectl set-hostname nametobe kept
+
+
+----------------
+init 6   ----restart the server
+
+
+--------------------------------------------------
+to get generate a public key linux
+
+ssh-keygen -t rsa -b 4096
+
+to connect from current server to another server without entering password follow this method
+
+copy the id_rsa.pub from current server and copy to the other server authorized key
+
+
+
+[root@ip-10-30-0-52 ~]# cd .ssh/
+[root@ip-10-30-0-52 .ssh]# ll -rht
+total 28K
+-rw-r--r-- 1 root root 1.7K Dec 30  2022 httpd.key
+-rw-r--r-- 1 root root  952 Dec 30  2022 httpd.csr
+-rw-r--r-- 1 root root  522 Jul  5 05:32 known_hosts
+-rw-r--r-- 1 root root  757 Jul  6 11:53 id_rsa.pub
+-rw------- 1 root root 3.2K Jul  6 11:53 id_rsa
+-rw------- 1 root root 5.4K Jul  6 11:53 authorized_keys
+
+
+-------------------------------------
+to see who logged in 
+
+
+[root@mail ~]# last -i
+johnp   pts/3        66.119.211.119   Mon Jul 31 12:59   still logged in
+centos   pts/1        10.19.201.239   Mon Jul 31 12:48 - 12:53  (00:05)
+centos   pts/0       10.19.201.239  Mon Jul 31 12:24 - 12:55  (00:31)
+
+
+
+---------------------------
+
+to find the file type
+
+tryhackme@linux2:~$ file note
+note: ASCII text
+
+
+------------------------
+
+ syntax for using scpto copy a file from a remote computer that we're not logged into 
+ 
+ scp ubuntu@192.168.1.30:/home/ubuntu/documents.txt notes.txt ------command used to download the content from the particular path
+ 
+ 
+ 
+ 
+ ---------------------------------------------------------------------------
+ 
+ Downloading a file from our webserver using wget
+ 
+ 
+ 
+ wget http://127.0.0.1:8000/file
+ 
+ 
+ -------------------------------------------------------------
+ 
+ Getting Processes/Services to Start on Boot
+ 
+ systemctl start apache2
+ 
+ 
+ 
+ --------------------------------------------------------
+ 
+ 
+ apt-cache show command is used to display detailed information about a
+ specific package such as description, version, dependencies, and other details from the system package cache.
+ 
+ 
+ 
+ ---------------------------------------------------------------
+ whois     -----------------whois package provides a command line client for the WHOIS protocol, which queries 
+ online server for information such as contact details for domains and IP address assignments. 
+ For most queries, it can pick the appropriate WHOIS server.
+ 
+ 
+ =------------------------------------------
+ 
+ to see the OS version and release information
+ 
+ ┌──(kali㉿kali)-[~]
+└─$ lsb_release -a      
+No LSB modules are available.
+Distributor ID: Kali
+Description:    Kali GNU/Linux Rolling
+Release:        2023.3
+Codename:       kali-rolling
+
+
+-----------------------------------
+
+
+to create a file and enter details in command line
+
+┌──(kali㉿kali)-[~]
+└─$ cat > passw.txt
+pass
+dav
+cyberops
+sffsffsfs
+
+
+
+
+-------------------------------
+
+
+
+After running this command, you should see a menu showing the installed Java versions. You can then 
+select the number corresponding to the version you want to set as the default. The system will update 
+the symbolic links to point to the selected Java version, making it the default for the java command.
+
+
+──(kali㉿kali)-[~/MYREPOS/vega]
+└─$ sudo update-alternatives --config java
+
+
+-------------------------------------------------
+
+to install ssh 
+
+sudo apt install openssh-client openssh-server
+
+
+sudo systemctl status ssh
+
+sudo systemctl start ssh
+
+sudo systemctl enable ssh
+
+
+
+---------------------
+
+
+w ----- command used to who has logged in the currently
+
+
+
+----------------
+
+to get the serial number of a file or inode number
+
+ls -li file1.txt
+
+--------
+
+to create a hard link of file 
+
+ln file1.txt file2.txt
+
+
+to create a soft link of file
+
+ln -s file1.txt file2.txt
+
+
+
+
+-------------------------------------
+
+
+to Encrypt and decrypt
+
+┌──(kali㉿kali)-[~]
+└─$ openssl aes-256-cbc -in zole123.txt -out racket-1.txt 
+enter AES-256-CBC encryption password:
+Verifying - enter AES-256-CBC encryption password:
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+                                                                                                                                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ ll -hrt       
+total 56K
+drwxr-xr-x 2 kali kali 4.0K Nov 19 10:24 Videos
+drwxr-xr-x 2 kali kali 4.0K Nov 19 10:24 Templates
+drwxr-xr-x 2 kali kali 4.0K Nov 19 10:24 Public
+drwxr-xr-x 2 kali kali 4.0K Nov 19 10:24 Music
+drwxr-xr-x 2 kali kali 4.0K Nov 19 10:24 Documents
+drwxr-xr-x 2 kali kali 4.0K Nov 19 10:24 Desktop
+drwxr-xr-x 2 kali kali 4.0K Nov 26 11:45 Pictures
+-rw-r--r-- 1 kali kali  161 Dec  2 22:47 rat.txt
+-rw-r--r-- 1 kali kali   78 Dec  2 22:48 user.txt
+-rw-r--r-- 1 kali kali   89 Dec  2 22:49 passw.txt
+drwxr-xr-x 4 kali kali 4.0K Dec  3 16:12 Downloads
+drwxr-xr-x 4 kali kali 4.0K Dec  8 15:15 MYREPOS
+-rw-r--r-- 1 kali kali   59 Dec  9 22:53 zole123.txt
+-rw-r--r-- 1 kali kali   80 Dec  9 22:55 racket-1.txt
+                                                                                                                                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cat racket-1.txt 
+Salted__��O\t}�ښOL[��m1h�D����▒���7�ҙ$O��oI6�g2z�!_Ӟ?��\ڨZ,LӂZ맊���H�                                                                                                                                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ openssl aes-256-cbc -a -in zole123.txt -out racket-1.txt
+enter AES-256-CBC encryption password:
+Verifying - enter AES-256-CBC encryption password:
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+                                                                                                                                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cat racket-1.txt                                        
+U2FsdGVkX1+lMcHf4vVHk1z/xFxy83EVcepNrkN+XbjAJsf+tF3356P6v/FZpgan
+7/XhdcFjSeEPnbpYEaYqhkv/KMS/F2VsqEKcJoU8W/M=
+                                                                                                                                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ openssl aes-256-cbc -a -d -in racket-1.txt -out decryte-1.txt
+enter AES-256-CBC decryption password:
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+                                                                                                                                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ cat decryte-1.txt                                            
+this is sample file please
+ignore and
+be cautious
+Bharath 
+
+
+
+
+--------------------------
+
+zipping a  file in the current directory in to one file with (encryption)
+
+└─$ zip -e testdoc.zip sample-test*
+Enter password: 
+Verify password: 
+  adding: sample-test1-txt (deflated 8%)
+  adding: sample-test2-txt (deflated 8%)
+  adding: sample-test3-txt (deflated 8%)
+  adding: sample-test4-txt (deflated 8%)
+  adding: sample-test5-txt (deflated 8%)
+  adding: sample-test6-txt (deflated 8%)
+  adding: sample-test7-txt (deflated 8%)
+                                                                                                                                                                                                                             
+┌──(kali㉿kali)-[~/Test-directory]
+└─$ ll -rht
+total 32K
+-rw-r--r-- 1 kali kali    0 Dec  9 23:04 sampel
+-rw-r--r-- 1 kali kali    0 Dec  9 23:04 jjel
+-rw-r--r-- 1 kali kali   51 Dec  9 23:07 sample-test1-txt
+-rw-r--r-- 1 kali kali   51 Dec  9 23:07 sample-test2-txt
+-rw-r--r-- 1 kali kali   51 Dec  9 23:07 sample-test3-txt
+-rw-r--r-- 1 kali kali   51 Dec  9 23:07 sample-test4-txt
+-rw-r--r-- 1 kali kali   51 Dec  9 23:07 sample-test5-txt
+-rw-r--r-- 1 kali kali   51 Dec  9 23:07 sample-test6-txt
+-rw-r--r-- 1 kali kali   51 Dec  9 23:07 sample-test7-txt
+-rw-r--r-- 1 kali kali 1.7K Dec  9 23:09 testdoc.zip
+
+--------------------------------------------------------------
+zipping a file (without encryption)
+
+
+zip -r filename.zip filenametozip
+
+
+
+---------------------------------------
+
+ssh tux@10.200.1.3   -- ssh a remote host
+
+------------------------------
+to see the difference between two files 
+
+vimdiff file1 file2  
+
+
+-------------------------------
+to see the all current sevices running 
+
+systemctl
+
+List All Units in systemctl
+
+systemctl --type=service 
+
+┌──(kali㉿kali)-[~]
+└─$ systemctl --type=service  --all
+  UNIT                                     LOAD      ACTIVE   SUB     DESCRIPTION                                            
+  accounts-daemon.service                  loaded    active   running Accounts Service
+  apparmor.service                         loaded    inactive dead    Load AppArmor profiles
+  apt-daily-upgrade.service                loaded    inactive dead    Daily apt upgrade and clean activities
+  apt-daily.service                        loaded    inactive dead    Daily apt download activities
+● auditd.service                           not-found inactive dead    auditd.service
+  auth-rpcgss-module.service               loaded    inactive dead    Kernel Module supporting RPCSEC_GSS
+  colord.service                           loaded    active   running Manage, Install and Generate Color Profiles
+● connman.service                          not-found inactive dead    connman.service
+● console-screen.service                   not-found inactive dead    console-screen.service
+  console-setup.service                    loaded    active   exited  Set console font and keymap
+  cron.service                             loaded    active   running Regular background program processing daemon
+  dbus.service                             loaded    active   running D-Bus System Message Bus
+  dpkg-db-backup.service                   loaded    inactive dead    Daily dpkg database backup service
+  e2scrub_all.service                      loaded    inactive dead    Online ext4 Metadata Check for All Filesystems
+  e2scrub_reap.service                     loaded    inactive dead    Remove Stale Online ext4 Metadata Check Snapshots
+  emergency.service                        loaded    inactive dead    Emergency Shell
+  fstrim.service                           loaded    inactive dead    Discard unused blocks on filesystems from /etc/fstab
+  getty-static.service                     loaded    inactive dead    getty on tty2-tty6 if dbus and logind are not available
+  getty@tty1.service                       loaded    active   running Getty on tty1
+  grub-install-devices.service             loaded    inactive dead    Set GRUB install devices if unset
+● gssproxy.service                         not-found inactive dead    gssproxy.service
+  haveged.service                          loaded    active   running Entropy Daemon based on the HAVEGE algorithm
+  ifupdown-pre.service                     loaded    active   exited  Helper to synchronize boot up for ifupdown
+  initrd-cleanup.service                   loaded    inactive dead    Cleaning Up and Shutting Down Daemons
+  initrd-parse-etc.service                 loaded    inactive dead    Mountpoints Configured in the Real Root
+  initrd-switch-root.service               loaded    inactive dead    Switch Root
+  initrd-udevadm-cleanup-db.service        loaded    inactive dead    Cleanup udev Database
+● kbd.service                              not-found inactive dead    kbd.service
+  keyboard-setup.service                   loaded    active   exited  Set the console keyboard layout
+  kmod-static-nodes.service                loaded    active   exited  Create List of Static Device Nodes
+
+---------------------------------------------------------------------------
+
+stat command is used in Unix-like operating systems to display detailed information about a file or file system. 
+It provides various details, including file size, permissions, timestamps, and other metadata.
+
+
+stat rat.txt
+  File: rat.txt
+  Size: 161             Blocks: 8          IO Block: 4096   regular file
+Device: 8,1     Inode: 3146345     Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/    kali)   Gid: ( 1000/    kali)
+Access: 2024-01-11 18:13:39.426193947 -0500
+Modify: 2023-12-02 22:47:25.680692428 -0500
+Change: 2023-12-02 22:47:25.680692428 -0500
+ Birth: 2023-12-02 22:46:33.882806407 -0500
+ 
+-------------------------------------------------
+
+to find which OS is runnig in the machine or server
+
+lsb_release -a
+
+
+
+-----------------------------------------------------------------
+
+
+command is a Linux utility that is used to display information about wireless networks. 
+It provides detailed information about the available wireless networks,
+ including their signal strength, encryption type, channel, and more.
+ 
+ -----iwlist wlan0 scanning
+ 
+ 
+ 
+ 
+----------------
+
+ulimit   ---command to check the limit provided
+
+
+
+
+-----------
+
+to take tcpdump
+
+tcpdump -i interfacename
+
+-------
+
+
+
+nmcli device wifi list  ----------list the wifi available
+
+
+
+
+---------------------------------
+to see wireless network connection
+
+
+┌──(kali㉿Rahul)-[~]
+└─$ iwconfig
+lo        no wireless extensions.
+
+eth0      no wireless extensions.
+
+---------------------------------
+
+to set static ip for interface
+
+ifconfig eth0 10.0.0.1
+
+-----------------------------------
+
+to open a port
+
+nc -l -p 53
+
+
+-----------------------
+to find specific package is installed 
+
+dpkg -l | grep package_name
+
+
+ubuntu@ip-172-31-90-34:~$ dpkg -l | grep apache2     
+ii  apache2                          2.4.52-1ubuntu4.9                       amd64        Apache HTTP Server
+ii  apache2-bin                      2.4.52-1ubuntu4.9                       amd64        Apache HTTP Server (modules and other binary files)
+ii  apache2-data                     2.4.52-1ubuntu4.9                       all          Apache HTTP Server (common files)
+ii  apache2-utils                    2.4.52-1ubuntu4.9                       amd64        Apache HTTP Server (utility programs for web servers)
+ii  libapache2-mod-php8.1            8.1.2-1ubuntu2.15                       amd64        server-side, HTML-embedded scripting language (Apache 2 module)
